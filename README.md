@@ -15,6 +15,6 @@ Ideally, we would want to move the user data from the script file into a local d
 Click here to see a preview:
 http://htmlpreview.github.io/?https://github.com/DoubleKevin07/LoginDemoJS/blob/master/index.html
 
-However, it will most likely not work when you press "Get Advice."
+However, it will most likely not work when you press "Log-in."
 
 To run it fully, download the source code and run "index.html" =)
