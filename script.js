@@ -2,12 +2,12 @@ var loginID = sessionStorage.getItem("awEJI!OP#"); // cookie?
 sessionStorage.setItem("awEJI!OP#", loginID)
 
 var dataArray = [{
-        username: "sam",
-        password: "codify",
+        username: "jim",
+        password: "lewis",
         id: 125
     },
     {
-        username: "matt",
+        username: "kevin",
         password: "academy",
         id: 316
     },
