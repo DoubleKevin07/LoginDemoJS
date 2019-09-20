@@ -9,3 +9,8 @@ Username: jim
 Password: lewis
 
 Ideally, we would want to move the user data from the script file into a local database, and interface with that database to retrieve data.
+
+## How do I try it?
+
+Click here:
+http://htmlpreview.github.io/?https://github.com/DoubleKevin07/LoginDemoJS/blob/master/index.html
