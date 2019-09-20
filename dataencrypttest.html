@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://requirejs.org/docs/release/2.3.6/r.js"></script>
+</head>
+
+<body>
+    <button onclick="save_account_data()">Encrypt</button>
+    <button onclick="load_account_data()">Decrypt</button>
+    <p id=data></p>
+</body>
+<script>
+    // Headers
+    var fs = require('fs');
+    var CryptoJS = require('crypto-js');
+    // Constants
+    var encrypt_key = 'JohnSMIT!@#*(I(2-lll-@T#LOCK3Is3theBai7st'
+
+    // Start data
+    var dataArray = [{
+        username: "sam",
+        password: "codify",
+        id: 1
+    }, {
+        username: "matt",
+        password: "academy",
+        id: 2
+    }, {
+        username: "chris",
+        password: "forever",
+        id: 3
+    }]
+    let newDataArray;
+
+    // Gets account data from encrypted file, loads it into active data array. Is it safe? Dunno.
+    function load_account_data() {
+        $.get("accountdata.db", function(data) {
+            var bytes = CryptoJS.AES.decrypt(data.toString(), encrypt_key);
+            var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+            eval('newDataArray = ' + decryptedData); // POSSIBLE TO EXPLOIT THIS BY INJECTING BAD CODE INTO USERNAME/PASSWORD.
+            document.findElementById("data").innerHTML = decryptedData;
+        });
+
+    }
+
+    // Saves all dataArray acc data into encrypted file.
+    function save_account_data() {
+        var file = fs.createWriteStream('accountdata.db');
+
+        var ciphered = CryptoJS.AES.encrypt(JSON.stringify(dataArray), encrypt_key);
+        file.write(ciphered);
+        document.findElementById("data").innerHTML = ciphered;
+        file.end();
+    }
+</script>
+<html>
