@@ -12,5 +12,7 @@ Ideally, we would want to move the user data from the script file into a local d
 
 ## How do I try it?
 
-Click here:
+Click here to see a preview:
 http://htmlpreview.github.io/?https://github.com/DoubleKevin07/LoginDemoJS/blob/master/index.html
+
+Otherwise, download the source code and run "index.html" =)
